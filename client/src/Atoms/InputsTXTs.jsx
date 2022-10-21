@@ -17,18 +17,33 @@ export const SearchInput = styled.input.attrs((props) => ({
 export const Input = styled(SearchInput)`
   background-color: var(--msg100);
   color: var(--orange300);
-  width: 300px;
+  width: ${(props) => props.width || "300px"};
   padding: 15px;
   border-bottom: 2px solid var(--shadow100);
   margin: ${(props) => props.margin};
   ::placeholder {
     color: var(--orange150);
   }
-  :focus{
+  :focus {
     border-bottom: 2px solid var(--orange300);
   }
 `;
 
 export const TXT = styled.textarea`
-
-`
+  background-color: var(--msg100);
+  color: var(--font100);
+  min-width: 300px;
+  width: 500px;
+  height: 150px;
+  padding: 15px;
+  box-shadow: 2px 2px 2px var(--shadow100);
+  /* resize: none; */
+  :focus {
+    outline: none;
+    border-bottom: 2px solid var(--orange300);
+  }
+  ::placeholder {
+    color: var(--orange150);
+    font-weight: bold;
+  }
+`;

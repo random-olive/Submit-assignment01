@@ -53,7 +53,6 @@ export const HotTagsStyle = styled(FlexBase)`
 //Btns
 export const BtnBase = styled(FlexBase)`
   cursor: pointer;
-  box-shadow: 1px 1px 1px var(--shadow100);
   color: var(--font100);
 `;
 export const LinkBtnStyle = styled(BtnBase)`

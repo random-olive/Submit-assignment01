@@ -64,5 +64,15 @@ export const BoardPageStyle = styled(PageBase)`
 `;
 
 export const PostPageStyle = styled(BoardPageStyle)`
-
-`
+  margin-top: 100px;
+  width: 600px;
+  background: var(--orange100);
+  padding: 20px;
+  div {
+    display: flex;
+    margin-bottom: 20px;
+    div:nth-child(2) {
+      margin-left: 20px;
+    }
+  }
+`;
