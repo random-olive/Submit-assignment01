@@ -68,6 +68,22 @@ export const PostPageStyle = styled(BoardPageStyle)`
   width: 600px;
   background: var(--orange100);
   padding: 20px;
+  .first {
+    display: flex;
+    align-items: center;
+    width: 90%;
+
+    div:nth-child(1) {
+      display: flex;
+      width: 100%;
+      justify-content: center;
+ 
+    }
+    .icon {
+     margin-right:10px;
+
+    }
+  }
   div {
     display: flex;
     margin-bottom: 20px;

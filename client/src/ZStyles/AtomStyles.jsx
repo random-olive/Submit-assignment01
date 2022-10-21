@@ -51,7 +51,9 @@ export const HotTagsStyle = styled(FlexBase)`
 `;
 
 //Btns
-export const BtnBase = styled(FlexBase)`
+export const BtnBase = styled.button`
+  background: transparent;
+  display: flex;
   cursor: pointer;
   color: var(--font100);
 `;

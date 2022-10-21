@@ -36,7 +36,8 @@ function App() {
             </Route>
 
             <Route element={<LayoutBase />}>
-              <Route path={PATH.CREATE} element={<PostPage />} />
+              <Route path={PATH.CREATE} element={<PostPage mode="create" />} />
+              <Route path={PATH.UPDATE} element={<PostPage />} />
             </Route>
           </Routes>
         </Suspense>
