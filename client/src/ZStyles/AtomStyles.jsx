@@ -106,15 +106,33 @@ export const BasicBtnStyle = styled(BtnBase)`
 
 //TextBoxes
 export const TextBoxBaseStyle = styled(StickyBtnStyle)`
+
   margin: -420px 50px 20px 30px;
   z-index: 500;
   color: var(--font200);
   .content--wrapper {
+    display: flex;
+    flex-direction: column;
+    color: var(--font100);
+    font-weight: bold;
     width: 250px;
     height: 400px;
     background: var(--msg100);
     box-shadow: 1px 1px 1px var(--shadow100);
     border-radius: 10px;
+    a {
+      color: var(--fon100);
+
+      :hover {
+        color: var(--red100);
+      }
+    }
+    .site {
+      margin-bottom: 10px;
+    }
+    .title {
+      margin-bottom: 40px;
+    }
     :hover {
       background: var(--msg100);
     }

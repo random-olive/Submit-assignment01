@@ -5,7 +5,7 @@ import { TextBox } from "./TextBox";
 export const StickyBtn = ({ content, on, setOn }) => {
   return (
     <>
-      {on ? <TextBox /> : ""}
+      {on ? <TextBox setOn={setOn} /> : ""}
       <StickyBtnStyle>
         <div
           className="content--wrapper"

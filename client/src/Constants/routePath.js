@@ -3,7 +3,7 @@ export const PATH = {
 
   SIGNUP: "/join",
   LOGIN: "/login",
-  MYPAGE: "/mypage",
+  // MYPAGE: "/mypage",
 
   BOARD:'/board',
   POST:'/board/:id',
