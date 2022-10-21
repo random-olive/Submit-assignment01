@@ -4,7 +4,7 @@ import { useEffect } from "react";
 import { fireStore } from "./Firebase";
 import { Suspense, useState } from "react";
 import { Routes, Route } from "react-router-dom";
-import { LayoutWithSearchbar } from "./Templates/Layouts";
+import { LayoutWithSearchbar, LayoutLogin } from "./Templates/Layouts";
 //lazy
 
 //Routes
@@ -12,6 +12,7 @@ import { PATH } from "./Constants/routePath";
 
 //Pages
 import MainPage from "./WebPages/MainPage";
+import LoginPage from "./WebPages/LoginPage";
 
 function App() {
   useEffect(() => {
@@ -24,7 +25,11 @@ function App() {
         <Suspense fallback={<div>Loading</div>}>
           <Routes>
             <Route element={<LayoutWithSearchbar />}>
-              <Route path={PATH.MAIN} element={<MainPage />}></Route>
+              <Route path={PATH.MAIN} element={<MainPage />}/>
+            </Route>
+
+            <Route element={<LayoutLogin />}>
+              <Route path={PATH.LOGIN} element={<LoginPage />}/>
             </Route>
           </Routes>
         </Suspense>

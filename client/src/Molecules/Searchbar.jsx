@@ -1,5 +1,5 @@
 import { SearchbarStyle } from "../ZStyles/MoleculeStyles";
-import Input from "../Atoms/Input";
+import { SearchInput } from "../Atoms/Inputs";
 import { SearchIcon } from "../Constants/icons";
 import HotTags from "../Atoms/HotTags";
 
@@ -7,7 +7,7 @@ const Searchbar = () => {
   return (
     <>
       <SearchbarStyle>
-        <Input />
+        <SearchInput />
         <SearchIcon color={"var(--orange300)"} />
       </SearchbarStyle>
       <HotTags />

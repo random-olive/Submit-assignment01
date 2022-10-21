@@ -1,16 +1,15 @@
 import { LogoStyle } from "../ZStyles/AtomStyles";
 
-const Logo = () => {
+const Logo = ({ margin }) => {
   return (
     <>
-      <LogoStyle>
-        <p>M</p>
-        <p>S</p>
-        <p>Z</p>
+      <LogoStyle margin={margin}>
+        <p>Port</p>
+        <p>foli</p>
+        <p>O</p>
       </LogoStyle>
     </>
   );
 };
 
 export default Logo;
-

@@ -5,10 +5,14 @@ export const FlexBase = styled.div`
 `;
 
 export const LogoStyle = styled(FlexBase)`
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 110px;
   height: 65px;
   font-size: 50px;
   font-weight: bolder;
+  margin: ${(props) => props.margin};
   cursor: pointer;
   p {
     margin-top: 0px;
@@ -21,6 +25,9 @@ export const LogoStyle = styled(FlexBase)`
     :nth-child(3) {
       color: ${"var(--orange100)"};
     }
+  }
+  :hover {
+    scale: 1.1;
   }
 `;
 
@@ -50,11 +57,12 @@ export const BtnBase = styled.div`
   cursor: pointer;
 `;
 export const LinkBtnStyle = styled(BtnBase)`
-  color: var(--orange200);
+  color: var(--font100);
   font-weight: bold;
-  margin: ${(props) => props.margin};
+  margin: ${(props) => props.margin || "30px 0 40px 0"};
   :hover {
-    color: var(--green200);
+    color: var(--orange200);
+    font-weight: 700;
   }
 `;
 

@@ -7,5 +7,5 @@ export const LayoutStyle = styled.div`
   justify-content: center;
   width: 100%;
   height: 100%;
-  background: var(--paper100);
+  /* background: var(--paper100); */
 `;
