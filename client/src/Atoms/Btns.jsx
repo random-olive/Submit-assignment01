@@ -1,4 +1,4 @@
-import { StickyBtnStyle } from "../ZStyles/AtomStyles";
+import { StickyBtnStyle, BasicBtnStyle } from "../ZStyles/AtomStyles";
 import { TextBox } from "./TextBox";
 
 export const StickyBtn = ({ content, on, setOn }) => {
@@ -15,6 +15,14 @@ export const StickyBtn = ({ content, on, setOn }) => {
           {content}
         </div>
       </StickyBtnStyle>
+    </>
+  );
+};
+
+export const BasicBtn = ({content}) => {
+  return (
+    <>
+      <BasicBtnStyle>{content}</BasicBtnStyle>
     </>
   );
 };

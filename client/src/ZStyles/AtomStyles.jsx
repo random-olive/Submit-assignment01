@@ -1,4 +1,4 @@
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
 
 export const FlexBase = styled.div`
   display: flex;
@@ -55,6 +55,7 @@ export const HotTagsStyle = styled(FlexBase)`
 export const BtnBase = styled.div`
   display: flex;
   cursor: pointer;
+  box-shadow: 1px 1px 1px var(--shadow100);
 `;
 export const LinkBtnStyle = styled(BtnBase)`
   color: var(--font100);
@@ -89,6 +90,20 @@ export const StickyBtnStyle = styled.div`
   }
 `;
 
+export const BasicBtnStyle = styled(BtnBase)`
+  justify-content: center;
+  align-items: center;
+  width: ${(props) => props.width || "120px"};
+  height: ${(props) => props.height || "50px"};
+  border-radius: 5px;
+
+  :hover{
+    background: var(--orange200);
+    color: white;
+    font-weight: bold;
+  }
+`;
+
 //TextBoxes
 export const TextBoxBaseStyle = styled(StickyBtnStyle)`
   margin: -420px 50px 20px 30px;
@@ -118,4 +133,12 @@ export const Backdrop = styled.div`
   z-index: 100;
   width: 100%;
   height: 100%;
+`;
+
+export const BoardStyle = styled.div`
+  width: 100%;
+  height: 100%;
+  border-radius: 3px;
+  padding: 20px;
+  box-shadow: 2px 2px 2px var(--shadow100);
 `;

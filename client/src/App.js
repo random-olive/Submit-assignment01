@@ -2,9 +2,9 @@ import "./App.css";
 import "./Constants/colors.css";
 import { useEffect } from "react";
 import { fireStore } from "./Firebase";
-import { Suspense, useState } from "react";
+import { Suspense } from "react";
 import { Routes, Route } from "react-router-dom";
-import { LayoutWithSearchbar, LayoutLogin } from "./Templates/Layouts";
+import { LayoutMain, Layout } from "./Templates/Layouts";
 //lazy
 
 //Routes
@@ -13,6 +13,7 @@ import { PATH } from "./Constants/routePath";
 //Pages
 import MainPage from "./WebPages/MainPage";
 import LoginPage from "./WebPages/LoginPage";
+import BoardPage from "./WebPages/BoardPage";
 
 function App() {
   useEffect(() => {
@@ -24,12 +25,13 @@ function App() {
         {/* {fireStore._databaseId.projectId} */}
         <Suspense fallback={<div>Loading</div>}>
           <Routes>
-            <Route element={<LayoutWithSearchbar />}>
-              <Route path={PATH.MAIN} element={<MainPage />}/>
+            <Route element={<LayoutMain />}>
+              <Route path={PATH.MAIN} element={<MainPage />} />
             </Route>
 
-            <Route element={<LayoutLogin />}>
-              <Route path={PATH.LOGIN} element={<LoginPage />}/>
+            <Route element={<Layout />}>
+              <Route path={PATH.LOGIN} element={<LoginPage />} />
+              <Route path={PATH.BOARD} element={<BoardPage />} />
             </Route>
           </Routes>
         </Suspense>

@@ -1,5 +1,5 @@
 import { SearchbarStyle } from "../ZStyles/MoleculeStyles";
-import { SearchInput } from "../Atoms/Inputs";
+import { SearchInput } from "../Atoms/InputsTXTs";
 import { SearchIcon } from "../Constants/icons";
 import HotTags from "../Atoms/HotTags";
 

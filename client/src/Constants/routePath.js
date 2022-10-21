@@ -4,4 +4,6 @@ export const PATH = {
   SIGNUP: "/join",
   LOGIN: "/login",
   MYPAGE: "/mypage",
+
+  BOARD:'/board'
 };

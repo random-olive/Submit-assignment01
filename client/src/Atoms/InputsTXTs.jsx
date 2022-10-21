@@ -28,3 +28,7 @@ export const Input = styled(SearchInput)`
     border-bottom: 2px solid var(--orange300);
   }
 `;
+
+export const TXT = styled.textarea`
+
+`

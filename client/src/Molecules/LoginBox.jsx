@@ -1,4 +1,4 @@
-import { Input } from "../Atoms/Inputs";
+import { Input } from "../Atoms/InputsTXTs";
 
 const LoginBox = () => {
   return (

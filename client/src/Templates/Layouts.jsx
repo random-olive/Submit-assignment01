@@ -6,7 +6,7 @@ import LinkBtns from "../Atoms/LinkBtns";
 import { LogoO, StickyBtnO } from "../Organisms/BtnsO";
 import { QuestionIcon } from "../Constants/icons";
 
-export const LayoutWithSearchbar = () => {
+export const LayoutMain = () => {
   return (
     <>
       <LayoutStyle>
@@ -22,7 +22,7 @@ export const LayoutWithSearchbar = () => {
   );
 };
 
-export const LayoutLogin = () => {
+export const Layout = () => {
   return (
     <>
       <LayoutStyle>
