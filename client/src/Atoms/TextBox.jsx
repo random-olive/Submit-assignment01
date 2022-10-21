@@ -2,7 +2,7 @@ import { TextBoxBaseStyle } from "../ZStyles/AtomStyles";
 import { Link } from "react-router-dom";
 import { PATH } from "../Constants/routePath";
 
-export const TextBox = ({setOn}) => {
+export const TextBox = ({ on, setOn }) => {
   const sitemap = [
     { link: PATH.MAIN, name: "메인" },
     { link: PATH.SIGNUP, name: "회원가입" },
@@ -17,13 +17,17 @@ export const TextBox = ({setOn}) => {
 
   return (
     <>
-      <TextBoxBaseStyle onClick={()=>{setOn(false)}}>
+      <TextBoxBaseStyle on={on.toString()}
+        onClick={() => {
+          setOn(false);
+        }}
+      >
         <div className="content--wrapper">
           <div className="title">빠른 이동</div>
           {sitemap.map((el, idx) => {
             return (
               <div key={idx} className="site">
-                <Link to={el.link} >
+                <Link to={el.link}>
                   <div>{el.name}</div>
                 </Link>
               </div>

@@ -1,4 +1,40 @@
-import styled from "styled-components";
+import styled, { keyframes, css } from "styled-components";
+
+//keyframes
+const fadeIn = keyframes`
+from {
+  opacity:0;
+}
+to{
+  opacity:1;
+}
+`;
+
+const fadeOut = keyframes`
+from {
+  opacity:1;
+}
+to{
+  opacity:0;
+}
+`;
+
+const fadeInAni = css`
+  animation: ${fadeIn} 1s;
+`;
+
+const fadeOutAni = css`
+  animation: ${fadeOut} 1s;
+`;
+
+const MoveSlide = keyframes`
+    0% {
+      transform: translateY(0%);
+    }
+    100% {
+      transform: translateY(-71%);
+    }
+  `;
 
 export const FlexBase = styled.div`
   display: flex;
@@ -106,7 +142,6 @@ export const BasicBtnStyle = styled(BtnBase)`
 
 //TextBoxes
 export const TextBoxBaseStyle = styled(StickyBtnStyle)`
-
   margin: -420px 50px 20px 30px;
   z-index: 500;
   color: var(--font200);
@@ -136,6 +171,9 @@ export const TextBoxBaseStyle = styled(StickyBtnStyle)`
     :hover {
       background: var(--msg100);
     }
+    /* color: ${(props) => (props.on === "true" ? "red" : "yellow")};
+    animation: ${(props) => (props.on === "true" ? fadeInAni : fadeOutAni)}; */
+    animation: ${fadeIn} 1s;
   }
   @media screen and (max-width: 1020px) {
     .content--wrapper {
