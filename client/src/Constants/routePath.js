@@ -5,5 +5,8 @@ export const PATH = {
   LOGIN: "/login",
   MYPAGE: "/mypage",
 
-  BOARD:'/board'
+  BOARD:'/board',
+  POST:'/board/:id',
+  CREATE: '/board/create',
+  UPDATE: '/board/:id/update',
 };

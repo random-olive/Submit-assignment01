@@ -4,7 +4,7 @@ import { useEffect } from "react";
 import { fireStore } from "./Firebase";
 import { Suspense } from "react";
 import { Routes, Route } from "react-router-dom";
-import { LayoutMain, Layout } from "./Templates/Layouts";
+import { LayoutMain, Layout, LayoutBase } from "./Templates/Layouts";
 //lazy
 
 //Routes
@@ -14,6 +14,7 @@ import { PATH } from "./Constants/routePath";
 import MainPage from "./WebPages/MainPage";
 import LoginPage from "./WebPages/LoginPage";
 import BoardPage from "./WebPages/BoardPage";
+import PostPage from "./WebPages/PostPage";
 
 function App() {
   useEffect(() => {
@@ -32,6 +33,10 @@ function App() {
             <Route element={<Layout />}>
               <Route path={PATH.LOGIN} element={<LoginPage />} />
               <Route path={PATH.BOARD} element={<BoardPage />} />
+            </Route>
+
+            <Route element={<LayoutBase />}>
+              <Route path={PATH.CREATE} element={<PostPage />} />
             </Route>
           </Routes>
         </Suspense>

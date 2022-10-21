@@ -5,7 +5,6 @@ export const FlexBase = styled.div`
 `;
 
 export const LogoStyle = styled(FlexBase)`
-  display: flex;
   align-items: center;
   justify-content: center;
   width: 110px;
@@ -52,23 +51,23 @@ export const HotTagsStyle = styled(FlexBase)`
 `;
 
 //Btns
-export const BtnBase = styled.div`
-  display: flex;
+export const BtnBase = styled(FlexBase)`
   cursor: pointer;
   box-shadow: 1px 1px 1px var(--shadow100);
+  color: var(--font100);
 `;
 export const LinkBtnStyle = styled(BtnBase)`
-  color: var(--font100);
+  color: var(--font200);
   font-weight: bold;
   margin: ${(props) => props.margin || "30px 0 40px 0"};
+  box-shadow: 0px 0px 0px var(--shadow100);
   :hover {
     color: var(--orange200);
     font-weight: 700;
   }
 `;
 
-export const StickyBtnStyle = styled.div`
-  display: flex;
+export const StickyBtnStyle = styled(FlexBase)`
   justify-content: right;
   width: 100%;
   margin: -30px 15% 60px 0;
@@ -97,7 +96,7 @@ export const BasicBtnStyle = styled(BtnBase)`
   height: ${(props) => props.height || "50px"};
   border-radius: 5px;
 
-  :hover{
+  :hover {
     background: var(--orange200);
     color: white;
     font-weight: bold;
@@ -141,4 +140,12 @@ export const BoardStyle = styled.div`
   border-radius: 3px;
   padding: 20px;
   box-shadow: 2px 2px 2px var(--shadow100);
+`;
+
+export const CardStyle = styled(FlexBase)`
+  width: 100%;
+  height: 150px;
+  background: var(--msg100);
+  border-radius: 10px;
+  padding: 20px;
 `;

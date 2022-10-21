@@ -1,14 +1,19 @@
 import { BoardPageStyle } from "../ZStyles/PageStyles";
 import { BoardStyle } from "../ZStyles/AtomStyles";
-import { BasicBtn } from "../Atoms/Btns";
+import { BasicBtnO } from "../Organisms/BtnsO";
+import {PATH} from '../Constants/routePath'
+
+import { PostCard } from "../Atoms/Cards";
 const BoardPage = () => {
   return (
     <>
       <BoardPageStyle>
         <div className="btn--wrapper">
-          <BasicBtn content="글쓰기" />
+          <BasicBtnO content="글쓰기" path={PATH.CREATE}/>
         </div>
-        <BoardStyle>글 카드</BoardStyle>
+        <BoardStyle>
+          <PostCard></PostCard>
+        </BoardStyle>
       </BoardPageStyle>
     </>
   );

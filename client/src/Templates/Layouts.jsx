@@ -5,12 +5,13 @@ import { LayoutStyle } from "../ZStyles/TemplateStyles";
 import LinkBtns from "../Atoms/LinkBtns";
 import { LogoO, StickyBtnO } from "../Organisms/BtnsO";
 import { QuestionIcon } from "../Constants/icons";
+import { PATH } from "../Constants/routePath";
 
 export const LayoutMain = () => {
   return (
     <>
       <LayoutStyle>
-        <LinkBtns content={"로그인"} path="/login" />
+        <LinkBtns content={"로그인"} path={PATH.LOGIN} />
         <LogoO />
         <Searchbar />
         <Outlet />
@@ -27,6 +28,16 @@ export const Layout = () => {
     <>
       <LayoutStyle>
         <LogoO margin={"110px 0 0 0"} />
+        <Outlet />
+      </LayoutStyle>
+    </>
+  );
+};
+
+export const LayoutBase = () => {
+  return (
+    <>
+      <LayoutStyle>
         <Outlet />
       </LayoutStyle>
     </>
