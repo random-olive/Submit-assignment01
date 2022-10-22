@@ -6,28 +6,32 @@ import LinkBtns from "../Atoms/LinkBtns";
 import styled from "styled-components";
 import { PATH } from "../Constants/routePath";
 import { socialLogin } from "../Organisms/FirebaseO";
-import Loading from "../Molecules/Loading";
+import { useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { getUser } from "../Redux/slices/userSlice";
 
-const LoginPage = ({ setIsLoggedIn, setLogout, loading, setLoading }) => {
-  //함수 만ㄷ르기
+const LoginPage = ({ setIsLoggedIn, setLogout }) => {
+  const userState = useSelector((state) => state.user);
+
   const [admin, setAdmin] = useState(false);
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
 
-  // useEffect(()=>{
-  //   authService.onAuthStateChanged((user)=>{
-  //     if (user){
-  //       setIsLoggedIn(true)
-  //     } else {
-  //       setLogout()
-  //     }
-  //   })
-  // },[])
   const handleLogin1 = () => {
     setAdmin(true);
   };
 
-  const handleLogin2 = () => {
+  const handleLogin2 = async () => {
     setAdmin(false);
-    socialLogin();
+    await socialLogin()
+      .then((res) =>
+        dispatch(
+          getUser({
+            list: res,
+          })
+        )
+      )
+      .then((res) => navigate("/"));
   };
 
   return (
@@ -54,7 +58,7 @@ const LoginPage = ({ setIsLoggedIn, setLogout, loading, setLoading }) => {
           </div>
         </div>
         {admin ? <LoginBox /> : ""}
-        <div className="login">로그인</div>
+        <div className="login">{userState.list.length===0? '로그인':'로그아웃'}</div>
       </LoginPageStyle>
       <Block>
         <p>관리자 계정이 없다면?</p>

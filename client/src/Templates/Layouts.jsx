@@ -6,12 +6,18 @@ import LinkBtns from "../Atoms/LinkBtns";
 import { LogoO, StickyBtnO } from "../Organisms/BtnsO";
 import { QuestionIcon } from "../Constants/icons";
 import { PATH } from "../Constants/routePath";
+import { useSelector } from "react-redux";
 
 export const LayoutMain = () => {
+  const userState = useSelector((state) => state.user);
+
   return (
     <>
       <LayoutStyle>
-        <LinkBtns content={"로그인"} path={PATH.LOGIN} />
+        <LinkBtns
+          content={userState.list.length === 0 ? "로그인" : "로그아웃"}
+          // path={PATH.LOGIN}
+        />
         <LogoO />
         <Searchbar />
         <Outlet />
