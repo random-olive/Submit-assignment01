@@ -1,3 +1,4 @@
+import { useId } from "react";
 import { StickyBtnStyle, BasicBtnStyle, Backdrop } from "../ZStyles/AtomStyles";
 import { TextBox } from "./TextBox";
 import { addDoc } from "firebase/firestore";
@@ -32,10 +33,12 @@ export const StickyBtn = ({ content, on, setOn }) => {
 };
 
 export const BasicBtn = ({ content, mode, post }) => {
+  const uniqueId = useId();
   const navigate = useNavigate();
   const userState = useSelector((state) => state.user);
   const create = async () => {
     const res = await addDoc(postsCollection, {
+      postId: uniqueId,
       title: post.title,
       body: post.body,
       author: userState.list.displayName,

@@ -15,14 +15,13 @@ const BoardPage = () => {
   useEffect(() => {
     const getPosts = async () => {
       const ordered = await getDocs(
-        postsCollection,
-        query,
-        orderBy("timestamp", "desc")
+        query(postsCollection, orderBy("timestamp", "desc"))
       );
       const result = ordered.docs.map((el) => el.data());
-      setResolved(result)
+      setResolved(result);
     };
     getPosts();
+    console.log(resolved);
   }, []);
 
   return (
@@ -36,7 +35,7 @@ const BoardPage = () => {
           )}
         </div>
         <BoardStyle>
-          <PostCard resolved={resolved}/>
+          <PostCard resolved={resolved} />
         </BoardStyle>
       </BoardPageStyle>
     </>

@@ -217,6 +217,7 @@ export const CardStyle = styled(FlexBase)`
   .title {
     font-size: 1.4rem;
     color: var(--font100);
+    font-weight: bold;
   }
   .author--date {
     display: flex;
