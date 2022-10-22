@@ -1,7 +1,6 @@
 import "./App.css";
 import "./Constants/colors.css";
 import { useEffect, useState } from "react";
-import { fireStore } from "./Firebase";
 import { Suspense } from "react";
 import { Routes, Route } from "react-router-dom";
 import { LayoutMain, Layout, LayoutBase } from "./Templates/Layouts";
@@ -18,9 +17,7 @@ import BoardPage from "./WebPages/BoardPage";
 import PostPage from "./WebPages/PostPage";
 
 function App() {
-  useEffect(() => {
-    console.log(fireStore);
-  }, []);
+
 
   const [loading, setLoading] = useState(false);
 

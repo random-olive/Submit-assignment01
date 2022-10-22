@@ -4,12 +4,15 @@ import { BasicBtnO } from "../Organisms/BtnsO";
 import {PATH} from '../Constants/routePath'
 
 import { PostCard } from "../Atoms/Cards";
+import { useSelector } from "react-redux";
+
 const BoardPage = () => {
+  const userState = useSelector((state)=>state.user)
   return (
     <>
       <BoardPageStyle>
         <div className="btn--wrapper">
-          <BasicBtnO content="글쓰기" path={PATH.CREATE}/>
+          {userState.list.length===0? '로그인하세요':<BasicBtnO content="글쓰기" path={PATH.CREATE}/>}
         </div>
         <BoardStyle>
           <PostCard></PostCard>
