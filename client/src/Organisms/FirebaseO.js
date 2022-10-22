@@ -1,25 +1,18 @@
-import {
-  getRedirectResult,
-  GoogleAuthProvider,
-  signInWithPopup,
-  signInWithRedirect,
-} from "firebase/auth";
-import { authService } from "../Firebase";
+import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+import Loading from "../Molecules/Loading";
 
-export const googleLogin = async (event) => {
-  const {
-    target: { name },
-  } = event;
+export const socialLogin = async (event) => {
+  // const {
+  //   target: { name },
+  // } = event;
+
   let provider;
-  if (name && name === "google") {
-    console.log(name)
-    provider = new GoogleAuthProvider();
-    // await new signInWithRedirect(authService, provider);
-    await new signInWithPopup(authService, provider);
-    // const result = await getRedirectResult(authService);
-    // if (result) {
-      // console.log(result);
-    // }
-    return;
-  }
+
+  const auth = getAuth();
+
+  // if (name === "google") {
+  provider = new GoogleAuthProvider();
+  const result = await signInWithPopup(auth, provider);
+  console.log(result);
+  // }
 };

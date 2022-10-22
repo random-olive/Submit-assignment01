@@ -14,21 +14,10 @@ export const firebaseConfig = {
 };
 
 export const firebaseInstance = initializeApp(firebaseConfig);
-export const authService = getAuth(firebaseInstance)
-// export const firebaseInstance = initializeApp(firebaseConfig);
+export const authService = getAuth(firebaseInstance);
 
-// export const authService = getAuth(firebaseInstance);
-// export const authService = {
-//   loginGoogle() {
-//     const auth = getAuth();
-//     const provider = new GoogleAuthProvider();
-//     return signInWithPopup(auth, provider);
-//   },
-// };
 
-// export const auth = firebaseInstance.auth();
-// export const provider = new firebaseInstance.auth.GoogleAuthProvider();
-// export const signInWithGoogle = () => auth.signInWithPopup(provider)
+
 
 export const fireStore = getFirestore(firebaseInstance);
 export const dbService = getFirestore(firebaseInstance);

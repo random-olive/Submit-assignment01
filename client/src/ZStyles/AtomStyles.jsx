@@ -108,7 +108,7 @@ export const StickyBtnStyle = styled(FlexBase)`
   justify-content: right;
   width: 100%;
   margin: -30px 15% 60px 0;
-  z-index: 300;
+  z-index: 999;
   .content--wrapper {
     display: flex;
     justify-content: center;
@@ -143,7 +143,7 @@ export const BasicBtnStyle = styled(BtnBase)`
 //TextBoxes
 export const TextBoxBaseStyle = styled(StickyBtnStyle)`
   margin: -420px 50px 20px 30px;
-  z-index: 500;
+  z-index: 999;
   color: var(--font200);
   .content--wrapper {
     display: flex;
@@ -184,11 +184,16 @@ export const TextBoxBaseStyle = styled(StickyBtnStyle)`
 
 //Backdrop
 export const Backdrop = styled.div`
-  background: var(--back100);
-  position: absolute;
-  z-index: 100;
-  width: 100%;
-  height: 100%;
+  position: fixed;
+  z-index: 500;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: grid;
+  place-items: center;
+  animation: ${fadeIn} 1s;
 `;
 
 export const BoardStyle = styled.div`

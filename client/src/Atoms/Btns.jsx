@@ -1,11 +1,17 @@
-import { StickyBtnStyle, BasicBtnStyle } from "../ZStyles/AtomStyles";
+import { StickyBtnStyle, BasicBtnStyle, Backdrop } from "../ZStyles/AtomStyles";
 import { TextBox } from "./TextBox";
-
 
 export const StickyBtn = ({ content, on, setOn }) => {
   return (
     <>
-      {on ? <TextBox setOn={setOn} on={on} /> : ""}
+      {on ? (
+        <>
+          <TextBox setOn={setOn} on={on} />
+          <Backdrop />
+        </>
+      ) : (
+        ""
+      )}
       <StickyBtnStyle>
         <div
           className="content--wrapper"

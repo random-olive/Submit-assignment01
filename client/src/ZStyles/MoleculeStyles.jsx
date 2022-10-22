@@ -24,7 +24,7 @@ export const BaseBoxStyle = styled.div`
 `;
 
 export const IngredientBoxStyle = styled(BaseBoxStyle)`
-margin-bottom: 80px;
+  margin-bottom: 80px;
   .wrapper {
     display: flex;
     width: 70%;
@@ -54,5 +54,21 @@ export const HotRecipesBoxStyle = styled(BaseBoxStyle)`
     display: flex;
     flex-direction: column;
     height: 150px;
+  }
+`;
+
+export const LoadingStyle = styled.div`
+  display: flex;
+  position: absolute;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 700;
+  top: 35%; 
+  div{
+    margin-top: 30px;
+    color: var(--orange200);
+    font-weight: bold;
+    font-size: 20px;
   }
 `;

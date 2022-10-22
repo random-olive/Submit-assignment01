@@ -5,11 +5,11 @@ import LoginBox from "../Molecules/LoginBox";
 import LinkBtns from "../Atoms/LinkBtns";
 import styled from "styled-components";
 import { PATH } from "../Constants/routePath";
-import { googleLogin } from "../Organisms/FirebaseO";
-import { authService } from "../Firebase";
+import { socialLogin } from "../Organisms/FirebaseO";
+import Loading from "../Molecules/Loading";
 
-
-const LoginPage = ({setIsLoggedIn, setLogout}) => { //함수 만ㄷ르기
+const LoginPage = ({ setIsLoggedIn, setLogout, loading, setLoading }) => {
+  //함수 만ㄷ르기
   const [admin, setAdmin] = useState(false);
 
   // useEffect(()=>{
@@ -21,13 +21,22 @@ const LoginPage = ({setIsLoggedIn, setLogout}) => { //함수 만ㄷ르기
   //     }
   //   })
   // },[])
+  const handleLogin1 = () => {
+    setAdmin(true);
+  };
+
+  const handleLogin2 = () => {
+    setAdmin(false);
+    socialLogin();
+  };
+
   return (
     <>
       <LoginPageStyle>
         <div>
           <div
             onClick={() => {
-              setAdmin(true);
+              handleLogin1();
             }}
           >
             <button name="admin">
@@ -36,10 +45,10 @@ const LoginPage = ({setIsLoggedIn, setLogout}) => { //함수 만ㄷ르기
           </div>
           <div
             onClick={() => {
-              setAdmin(false);
+              handleLogin2();
             }}
           >
-            <button name="google" onClick={googleLogin}>
+            <button name="google">
               <GoogleIcon size={25} />
             </button>
           </div>
