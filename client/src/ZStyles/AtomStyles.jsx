@@ -200,14 +200,29 @@ export const BoardStyle = styled.div`
   width: 100%;
   height: 100%;
   border-radius: 3px;
-  padding: 20px;
+  padding: 20px 25px 30px 20px;
   box-shadow: 2px 2px 2px var(--shadow100);
+  margin-bottom: 50px;
 `;
 
 export const CardStyle = styled(FlexBase)`
+  display: flex;
+  flex-direction: column;
   width: 100%;
   height: 150px;
   background: var(--msg100);
   border-radius: 10px;
   padding: 20px;
+  margin-bottom: 20px;
+  .title {
+    font-size: 1.4rem;
+    color: var(--font100);
+  }
+  .author--date {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    height: 100%;
+    color: var(--font100);
+  }
 `;

@@ -3,6 +3,7 @@ import { TextBox } from "./TextBox";
 import { addDoc } from "firebase/firestore";
 import { postsCollection } from "../Firebase";
 import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
 import DateCalculator from "./DateCalculator";
 
 export const StickyBtn = ({ content, on, setOn }) => {
@@ -32,14 +33,17 @@ export const StickyBtn = ({ content, on, setOn }) => {
 
 export const BasicBtn = ({ content, mode, post }) => {
   const navigate = useNavigate();
+  const userState = useSelector((state) => state.user);
   const create = async () => {
     const res = await addDoc(postsCollection, {
       title: post.title,
       body: post.body,
-      author: 'me',
-      createdAt: DateCalculator(new Date())
+      author: userState.list.displayName,
+      createdAt: DateCalculator(new Date()),
+      timestamp: new Date(),
     });
-    navigate('/board')
+    // console.log(postsCollection) //id추가하기//db 필드에도
+    navigate("/board");
   };
 
   const update = () => {

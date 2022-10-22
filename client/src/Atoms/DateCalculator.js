@@ -33,7 +33,7 @@ const DateCalculator = () => {
     c = second;
   }
 
-  return `${a}:${b}:${c}`;
+  return `${dummy.toLocaleDateString().slice(0,-5)} ${a}:${b}:${c}`;
 };
 
 export default DateCalculator;
