@@ -21,15 +21,22 @@ export const LoginPageStyle = styled(PageBase)`
   border-radius: 10px;
   width: 25%;
   box-shadow: 1px 1px 1px var(--shadow100);
+
   div {
     display: flex;
     width: 100%;
     height: 50px;
     justify-content: space-around;
     align-items: center;
-
+    button {
+      display: flex;
+      cursor: pointer;
+      align-items: center;
+      background:transparent;
+    }
     div:nth-child(1),
     div:nth-child(2) {
+      cursor: pointer;
       height: 50px;
       border-radius: 7px;
       border: 1px solid var(--gray100);
@@ -37,10 +44,6 @@ export const LoginPageStyle = styled(PageBase)`
         background: var(--orange100);
         border-radius: 7px;
       }
-    }
-    div:nth-child(1) {
-      cursor: pointer;
-      justify-content: center;
     }
   }
   .login {
@@ -77,11 +80,9 @@ export const PostPageStyle = styled(BoardPageStyle)`
       display: flex;
       width: 100%;
       justify-content: center;
- 
     }
     .icon {
-     margin-right:10px;
-
+      margin-right: 10px;
     }
   }
   div {

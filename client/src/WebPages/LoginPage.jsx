@@ -17,14 +17,18 @@ const LoginPage = () => {
               setAdmin(true);
             }}
           >
-            관리자 <LoginIcon size={25} />
+            <button name="admin">
+              관리자 <LoginIcon size={25} />
+            </button>
           </div>
           <div
             onClick={() => {
               setAdmin(false);
             }}
           >
-            <GoogleIcon size={25} />
+            <button name="google">
+              <GoogleIcon size={25} />
+            </button>
           </div>
         </div>
         {admin ? <LoginBox /> : ""}
@@ -32,7 +36,12 @@ const LoginPage = () => {
       </LoginPageStyle>
       <Block>
         <p>관리자 계정이 없다면?</p>
-        <LinkBtns content={"회원가입"} path={PATH.SIGNUP} width="25%" margin="30px 0 30px 0"/>
+        <LinkBtns
+          content={"회원가입"}
+          path={PATH.SIGNUP}
+          width="25%"
+          margin="30px 0 30px 0"
+        />
       </Block>
     </>
   );
