@@ -1,13 +1,26 @@
 import { LoginPageStyle } from "../ZStyles/PageStyles";
 import { GoogleIcon, LoginIcon } from "../Constants/icons";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import LoginBox from "../Molecules/LoginBox";
 import LinkBtns from "../Atoms/LinkBtns";
 import styled from "styled-components";
 import { PATH } from "../Constants/routePath";
+import { googleLogin } from "../Organisms/FirebaseO";
+import { authService } from "../Firebase";
 
-const LoginPage = () => {
+
+const LoginPage = ({setIsLoggedIn, setLogout}) => { //함수 만ㄷ르기
   const [admin, setAdmin] = useState(false);
+
+  // useEffect(()=>{
+  //   authService.onAuthStateChanged((user)=>{
+  //     if (user){
+  //       setIsLoggedIn(true)
+  //     } else {
+  //       setLogout()
+  //     }
+  //   })
+  // },[])
   return (
     <>
       <LoginPageStyle>
@@ -26,7 +39,7 @@ const LoginPage = () => {
               setAdmin(false);
             }}
           >
-            <button name="google">
+            <button name="google" onClick={googleLogin}>
               <GoogleIcon size={25} />
             </button>
           </div>
