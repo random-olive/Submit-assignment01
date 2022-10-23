@@ -1,4 +1,4 @@
-import { useId, useState } from "react";
+import { useId, useState, useEffect } from "react";
 import { StickyBtnStyle, BasicBtnStyle, Backdrop } from "../ZStyles/AtomStyles";
 import { TextBox } from "./TextBox";
 import {
@@ -51,6 +51,10 @@ export const BasicBtn = ({ content, mode, post }) => {
   const userState = useSelector((state) => state.user);
   const [pickId, setPickId] = useState("");
 
+  useEffect(() => {
+    updatePost();
+  }, [pickId]);
+
   const create = async () => {
     if (post !== undefined) {
       const res = await addDoc(postsCollection, {
@@ -66,9 +70,8 @@ export const BasicBtn = ({ content, mode, post }) => {
   };
 
   const update = async () => {
-    console.log("수정모드");
-
     const q = query(postsCollection, where("postId", "==", `${id}`));
+
     onSnapshot(q, (shot) => {
       const queried = shot.docs.map((el) => ({
         ...el.data(),
@@ -76,6 +79,9 @@ export const BasicBtn = ({ content, mode, post }) => {
       }))[0];
       setPickId(queried.id);
     });
+  };
+
+  const updatePost = async () => {
     if (pickId !== "") {
       const tobeUpdated = doc(postsCollection, pickId);
       const newField = { title: post.title, body: post.body };
