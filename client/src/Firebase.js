@@ -16,8 +16,8 @@ export const firebaseConfig = {
 
 export const firebaseInstance = initializeApp(firebaseConfig);
 export const db = getFirestore(firebaseInstance);
-export const postsCollection = collection(db, "posts")
-
+export const dbService = getFirestore();
+export const postsCollection = collection(db, "posts");
 
 // export const authService = getAuth(firebaseInstance);
 // export const fireStore = getFirestore(firebaseInstance);
