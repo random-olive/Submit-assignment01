@@ -21,7 +21,7 @@ const BoardPage = () => {
       setResolved(result);
     };
     getPosts();
-    console.log(resolved);
+    console.log("resolved", resolved);
   }, []);
 
   return (
@@ -31,7 +31,7 @@ const BoardPage = () => {
           {userState.list.length === 0 ? (
             "로그인하세요"
           ) : (
-            <BasicBtnO content="글쓰기" path={PATH.CREATE} />
+            <BasicBtnO content="글쓰기" mode="create" path={PATH.CREATE} />
           )}
         </div>
         <BoardStyle>

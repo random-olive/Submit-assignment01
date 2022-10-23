@@ -23,11 +23,11 @@ export const LogoO = ({ margin }) => {
   );
 };
 
-export const BasicBtnO = ({ content, path }) => {
+export const BasicBtnO = ({ content, path, mode }) => {
   return (
     <>
       <Link to={path}>
-        <BasicBtn content={content} />
+        <BasicBtn content={content} mode={mode} />
       </Link>
     </>
   );

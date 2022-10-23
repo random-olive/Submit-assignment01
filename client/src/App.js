@@ -15,10 +15,9 @@ import MainPage from "./WebPages/MainPage";
 import LoginPage from "./WebPages/LoginPage";
 import BoardPage from "./WebPages/BoardPage";
 import PostPage from "./WebPages/PostPage";
+import DetailPage from "./WebPages/DetailPage";
 
 function App() {
-
-
   const [loading, setLoading] = useState(false);
 
   return (
@@ -32,12 +31,18 @@ function App() {
             </Route>
 
             <Route element={<Layout />}>
-              <Route path={PATH.LOGIN} element={<LoginPage />} loading={loading} setLoading={setLoading} />
+              <Route
+                path={PATH.LOGIN}
+                element={<LoginPage />}
+                loading={loading}
+                setLoading={setLoading}
+              />
               <Route path={PATH.BOARD} element={<BoardPage />} />
             </Route>
 
             <Route element={<LayoutBase />}>
               <Route path={PATH.CREATE} element={<PostPage mode="create" />} />
+              <Route path={PATH.DETAIL} element={<DetailPage />} />
               <Route path={PATH.UPDATE} element={<PostPage />} />
             </Route>
           </Routes>

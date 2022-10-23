@@ -6,9 +6,14 @@ import { BackIcon, DeleteIcon } from "../Constants/icons";
 import { BasicBtnO } from "../Organisms/BtnsO";
 import { PATH } from "../Constants/routePath";
 import { useState } from "react";
+import { useParams } from "react-router-dom";
 
 const PostPage = ({ mode }) => {
-  const [post, setPost] = useState({ title: "", body: "" });
+  const { id } = useParams();
+  const [post, setPost] = useState({
+    title: mode === "create" ? "" : window.localStorage.getItem("title"),
+    body: mode === "create" ? "" : window.localStorage.getItem("body"),
+  });
   const onChange = (e) => {
     setPost({ ...post, [e.target.name]: e.target.value });
   };
@@ -43,7 +48,10 @@ const PostPage = ({ mode }) => {
           />
         </div>
         <div className="btn">
-          <BasicBtnO content={<BackIcon size={20} />} path={PATH.BOARD} />
+          <BasicBtnO
+            content={<BackIcon size={20} />}
+            path={mode === "create" ? PATH.BOARD : `/board/${id}`}
+          />
           <BasicBtn
             content={mode === "create" ? "등록" : "수정"}
             mode={mode}

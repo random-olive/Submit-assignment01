@@ -24,13 +24,16 @@ const LoginPage = ({ setIsLoggedIn, setLogout }) => {
   const handleLogin2 = async () => {
     setAdmin(false);
     await socialLogin()
-      .then((res) =>
-        dispatch(
-          getUser({
-            list: res,
-          })
-        )
+      .then(
+        (res) =>
+          dispatch(
+            getUser({
+              list: res,
+            })
+          )
+        // console.log(res)
       )
+
       .then((res) => navigate("/"));
   };
 
@@ -58,7 +61,9 @@ const LoginPage = ({ setIsLoggedIn, setLogout }) => {
           </div>
         </div>
         {admin ? <LoginBox /> : ""}
-        <div className="login">{userState.list.length===0? '로그인':'로그아웃'}</div>
+        <div className="login">
+          {userState.list.length === 0 ? "로그인" : "로그아웃"}
+        </div>
       </LoginPageStyle>
       <Block>
         <p>관리자 계정이 없다면?</p>

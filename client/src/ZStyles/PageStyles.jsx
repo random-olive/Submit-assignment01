@@ -32,7 +32,7 @@ export const LoginPageStyle = styled(PageBase)`
       display: flex;
       cursor: pointer;
       align-items: center;
-      background:transparent;
+      background: transparent;
     }
     div:nth-child(1),
     div:nth-child(2) {
@@ -91,5 +91,44 @@ export const PostPageStyle = styled(BoardPageStyle)`
     div:nth-child(2) {
       margin-left: 20px;
     }
+  }
+`;
+
+export const DetailPageStyle = styled(BoardPageStyle)`
+  background: var(--msg100);
+  padding: 30px;
+  font-weight: bold;
+  color: var(--font100);
+  .icons {
+    display: flex;
+    width: 100%;
+    justify-content: right;
+    a {
+      color: var(--font100);
+    }
+    font-size: 1.2rem;
+
+   
+      margin-right: 15px;
+    
+  }
+  .title {
+    display: flex;
+    width: 100%;
+    color: var(--red100);
+    font-size: 2rem;
+    margin-top: 10px;
+  }
+  .wrapper {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    color: var(--orange500);
+    margin-top: 10px;
+  }
+  .body {
+    width: 100%;
+    color: var(--font100);
+    margin-top: 30px;
   }
 `;

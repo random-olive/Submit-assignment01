@@ -37,16 +37,17 @@ export const BasicBtn = ({ content, mode, post }) => {
   const navigate = useNavigate();
   const userState = useSelector((state) => state.user);
   const create = async () => {
-    const res = await addDoc(postsCollection, {
-      postId: uniqueId,
-      title: post.title,
-      body: post.body,
-      author: userState.list.displayName,
-      createdAt: DateCalculator(new Date()),
-      timestamp: new Date(),
-    });
-    // console.log(postsCollection) //id추가하기//db 필드에도
-    navigate("/board");
+    if (post !== undefined) {
+      const res = await addDoc(postsCollection, {
+        postId: uniqueId,
+        title: post.title,
+        body: post.body,
+        author: userState.list.displayName,
+        createdAt: DateCalculator(new Date()),
+        timestamp: new Date(),
+      });
+      navigate("/board");
+    }
   };
 
   const update = () => {
@@ -58,7 +59,13 @@ export const BasicBtn = ({ content, mode, post }) => {
   };
   return (
     <>
-      <BasicBtnStyle onClick={CUHandler}>{content}</BasicBtnStyle>
+      <BasicBtnStyle
+        onClick={() => {
+          CUHandler();
+        }}
+      >
+        {content}
+      </BasicBtnStyle>
     </>
   );
 };

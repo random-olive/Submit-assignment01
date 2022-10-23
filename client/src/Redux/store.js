@@ -13,6 +13,7 @@ import { persistReducer } from "redux-persist";
 
 //slices
 import { userSlice } from "./slices/userSlice";
+import { postSlice } from "./slices/postSlices";
 
 //logger
 const logger = createLogger();
@@ -20,6 +21,7 @@ const logger = createLogger();
 //
 const rootReducer = combineReducers({
   user: userSlice.reducer,
+  post: postSlice.reducer
 });
 
 const persistConfig = { key: "root", storage };
