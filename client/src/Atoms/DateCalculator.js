@@ -14,6 +14,8 @@ const DateCalculator = () => {
   } else if (hour >= 12 && hour <= 23) {
     if (hour === 12) {
       a = `PM 12`;
+    } else if (hour < 21) {
+      a = `PM 0${hour - 12}`;
     } else {
       a = `PM ${hour - 12}`;
     }
@@ -33,7 +35,7 @@ const DateCalculator = () => {
     c = second;
   }
 
-  return `${dummy.toLocaleDateString().slice(0,-5)} ${a}:${b}:${c}`;
+  return `${dummy.toLocaleDateString().slice(0, -5)} ${a}:${b}:${c}`;
 };
 
 export default DateCalculator;

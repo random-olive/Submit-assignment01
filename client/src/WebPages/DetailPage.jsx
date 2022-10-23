@@ -48,6 +48,9 @@ const DetailPage = () => {
         </div>
         <div className="body">{detail.body}</div>
       </DetailPageStyle>
+      <Link to="/board">
+        <button>Go to board</button>
+      </Link>
     </>
   );
 };

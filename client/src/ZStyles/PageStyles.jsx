@@ -95,6 +95,7 @@ export const PostPageStyle = styled(BoardPageStyle)`
 `;
 
 export const DetailPageStyle = styled(BoardPageStyle)`
+  margin-bottom: 30px;
   background: var(--msg100);
   padding: 30px;
   font-weight: bold;
@@ -108,9 +109,7 @@ export const DetailPageStyle = styled(BoardPageStyle)`
     }
     font-size: 1.2rem;
 
-   
-      margin-right: 15px;
-    
+    margin-right: 15px;
   }
   .title {
     display: flex;
