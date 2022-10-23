@@ -1,7 +1,8 @@
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
-import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 import { getAnalytics } from "firebase/analytics";
+
+import { collection, getDocs, addDoc } from "firebase/firestore";
 
 export const firebaseConfig = {
   apiKey: process.env.REACT_APP_API_KEY,
@@ -14,22 +15,10 @@ export const firebaseConfig = {
 };
 
 export const firebaseInstance = initializeApp(firebaseConfig);
-export const authService = getAuth(firebaseInstance)
-// export const firebaseInstance = initializeApp(firebaseConfig);
+export const db = getFirestore(firebaseInstance);
+export const dbService = getFirestore();
+export const postsCollection = collection(db, "posts");
 
 // export const authService = getAuth(firebaseInstance);
-// export const authService = {
-//   loginGoogle() {
-//     const auth = getAuth();
-//     const provider = new GoogleAuthProvider();
-//     return signInWithPopup(auth, provider);
-//   },
-// };
-
-// export const auth = firebaseInstance.auth();
-// export const provider = new firebaseInstance.auth.GoogleAuthProvider();
-// export const signInWithGoogle = () => auth.signInWithPopup(provider)
-
-export const fireStore = getFirestore(firebaseInstance);
-export const dbService = getFirestore(firebaseInstance);
+// export const fireStore = getFirestore(firebaseInstance);
 export const analytics = getAnalytics(firebaseInstance);

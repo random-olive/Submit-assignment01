@@ -8,5 +8,6 @@ export const PATH = {
   BOARD:'/board',
   POST:'/board/:id',
   CREATE: '/board/create',
+  DETAIL: '/board/:id',
   UPDATE: '/board/:id/update',
 };

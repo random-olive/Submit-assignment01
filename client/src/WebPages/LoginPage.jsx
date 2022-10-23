@@ -5,29 +5,45 @@ import LoginBox from "../Molecules/LoginBox";
 import LinkBtns from "../Atoms/LinkBtns";
 import styled from "styled-components";
 import { PATH } from "../Constants/routePath";
-import { googleLogin } from "../Organisms/FirebaseO";
-import { authService } from "../Firebase";
+import { socialLogin } from "../Organisms/FirebaseO";
+import { useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { getUser } from "../Redux/slices/userSlice";
 
+const LoginPage = ({ setIsLoggedIn, setLogout }) => {
+  const userState = useSelector((state) => state.user);
 
-const LoginPage = ({setIsLoggedIn, setLogout}) => { //함수 만ㄷ르기
   const [admin, setAdmin] = useState(false);
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
 
-  // useEffect(()=>{
-  //   authService.onAuthStateChanged((user)=>{
-  //     if (user){
-  //       setIsLoggedIn(true)
-  //     } else {
-  //       setLogout()
-  //     }
-  //   })
-  // },[])
+  const handleLogin1 = () => {
+    setAdmin(true);
+  };
+
+  const handleLogin2 = async () => {
+    setAdmin(false);
+    await socialLogin()
+      .then(
+        (res) =>
+          dispatch(
+            getUser({
+              list: res,
+            })
+          )
+        // console.log(res)
+      )
+
+      .then((res) => navigate("/"));
+  };
+
   return (
     <>
       <LoginPageStyle>
         <div>
           <div
             onClick={() => {
-              setAdmin(true);
+              handleLogin1();
             }}
           >
             <button name="admin">
@@ -36,25 +52,22 @@ const LoginPage = ({setIsLoggedIn, setLogout}) => { //함수 만ㄷ르기
           </div>
           <div
             onClick={() => {
-              setAdmin(false);
+              handleLogin2();
             }}
           >
-            <button name="google" onClick={googleLogin}>
+            <button name="google">
               <GoogleIcon size={25} />
             </button>
           </div>
         </div>
         {admin ? <LoginBox /> : ""}
-        <div className="login">로그인</div>
+        <div className="login">
+          {userState.list.length === 0 ? "로그인" : "로그아웃"}
+        </div>
       </LoginPageStyle>
       <Block>
         <p>관리자 계정이 없다면?</p>
-        <LinkBtns
-          content={"회원가입"}
-          path={PATH.SIGNUP}
-          width="25%"
-          margin="30px 0 30px 0"
-        />
+        <LinkBtns content={"회원가입"} width="25%" margin="30px 0 30px 0" />
       </Block>
     </>
   );
