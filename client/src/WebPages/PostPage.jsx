@@ -5,11 +5,14 @@ import { PostPageStyle } from "../ZStyles/PageStyles";
 import { BackIcon, DeleteIcon } from "../Constants/icons";
 import { BasicBtnO } from "../Organisms/BtnsO";
 import { PATH } from "../Constants/routePath";
-import { useState } from "react";
-import { useParams } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { useParams, useNavigate } from "react-router-dom";
+import { postsCollection } from "../Firebase";
+import { query, where, onSnapshot, doc, deleteDoc } from "firebase/firestore";
 
 const PostPage = ({ mode }) => {
   const { id } = useParams();
+  const navigate = useNavigate();
   const [post, setPost] = useState({
     title: mode === "create" ? "" : window.localStorage.getItem("title"),
     body: mode === "create" ? "" : window.localStorage.getItem("body"),
@@ -18,6 +21,36 @@ const PostPage = ({ mode }) => {
     setPost({ ...post, [e.target.name]: e.target.value });
   };
 
+  const [delId, setDelId] = useState("");
+
+  const findDelQuery = async () => {
+    const q = query(postsCollection, where("postId", "==", `${id}`));
+
+    onSnapshot(q, (shot) => {
+      const queried = shot.docs.map((el) => ({
+        ...el.data(),
+        id: el.id,
+      }))[0];
+      // console.log(queried)
+      setDelId(queried.id);
+    });
+  };
+
+  const deletePost = async () => {
+    if (delId !== "") {
+      const tobeDeleted = doc(postsCollection, delId);
+      await deleteDoc(tobeDeleted);
+      alert(`삭제 되었습니다`);
+      navigate(`/board`);
+    }
+  };
+
+  useEffect(() => {
+    findDelQuery();
+  }, [delId]);
+
+  console.log(delId);
+
   return (
     <>
       <PostPageStyle>
@@ -25,7 +58,12 @@ const PostPage = ({ mode }) => {
           <H2 color="var(--red100)" fontWeight="bold">
             {mode === "create" ? "글 작성하기" : "글 수정하기"}
           </H2>
-          <div className="icon">
+          <div
+            className="icon"
+            onClick={() => {
+              deletePost();
+            }}
+          >
             <DeleteIcon color="var(--orange200)" size={20} />
           </div>
         </div>

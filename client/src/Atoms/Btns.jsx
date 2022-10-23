@@ -4,16 +4,11 @@ import { TextBox } from "./TextBox";
 import {
   addDoc,
   doc,
-  collection,
-  getDocs,
-  getFirestore,
   updateDoc,
   query,
   where,
   onSnapshot,
 } from "firebase/firestore";
-import { dbService } from "../Firebase";
-import { db, firebaseInstance } from "../Firebase";
 import { postsCollection } from "../Firebase";
 import { useNavigate, useParams } from "react-router-dom";
 import { useSelector } from "react-redux";

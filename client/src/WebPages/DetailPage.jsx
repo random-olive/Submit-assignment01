@@ -4,13 +4,14 @@ import { db, postsCollection } from "../Firebase";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { DetailPageStyle } from "../ZStyles/PageStyles";
-import { SettingIcon, DeleteIcon } from "../Constants/icons";
+import { SettingIcon } from "../Constants/icons";
 import { PATH } from "../Constants/routePath";
 
 const DetailPage = () => {
   const { id } = useParams();
   const userState = useSelector((state) => state.user);
   const [detail, setDetail] = useState([]);
+
   useEffect(() => {
     const getPost = async () => {
       const data = await getDocs(postsCollection);
