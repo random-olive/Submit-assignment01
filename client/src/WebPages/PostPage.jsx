@@ -32,7 +32,9 @@ const PostPage = ({ mode }) => {
         id: el.id,
       }))[0];
       // console.log(queried)
-      setDelId(queried.id);
+      if (queried) {
+        setDelId(queried.id);
+      }
     });
   };
 
@@ -49,7 +51,7 @@ const PostPage = ({ mode }) => {
     findDelQuery();
   }, [delId]);
 
-  console.log(delId);
+  // console.log(delId);
 
   return (
     <>

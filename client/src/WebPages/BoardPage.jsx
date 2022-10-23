@@ -3,7 +3,7 @@ import { BoardPageStyle } from "../ZStyles/PageStyles";
 import { BoardStyle } from "../ZStyles/AtomStyles";
 import { BasicBtnO } from "../Organisms/BtnsO";
 import { PATH } from "../Constants/routePath";
-
+import { Link } from "react-router-dom";
 import { PostCard } from "../Atoms/Cards";
 import { useSelector } from "react-redux";
 import { getDocs, orderBy, query } from "firebase/firestore";
@@ -21,7 +21,6 @@ const BoardPage = () => {
       setResolved(result);
     };
     getPosts();
-    console.log("resolved", resolved);
   }, []);
 
   return (
@@ -29,7 +28,7 @@ const BoardPage = () => {
       <BoardPageStyle>
         <div className="btn--wrapper">
           {userState.list.length === 0 ? (
-            "로그인하세요"
+            <Link to="/login">로그인하세요</Link>
           ) : (
             <BasicBtnO content="글쓰기" mode="create" path={PATH.CREATE} />
           )}

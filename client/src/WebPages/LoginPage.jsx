@@ -67,12 +67,7 @@ const LoginPage = ({ setIsLoggedIn, setLogout }) => {
       </LoginPageStyle>
       <Block>
         <p>관리자 계정이 없다면?</p>
-        <LinkBtns
-          content={"회원가입"}
-          path={PATH.SIGNUP}
-          width="25%"
-          margin="30px 0 30px 0"
-        />
+        <LinkBtns content={"회원가입"} width="25%" margin="30px 0 30px 0" />
       </Block>
     </>
   );

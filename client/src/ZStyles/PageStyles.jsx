@@ -58,6 +58,9 @@ export const LoginPageStyle = styled(PageBase)`
 export const BoardPageStyle = styled(PageBase)`
   width: 50%;
   align-items: center;
+  a{
+    color:var(--font200)
+  }
   .btn--wrapper {
     display: flex;
     width: 100%;

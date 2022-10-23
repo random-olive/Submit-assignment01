@@ -72,7 +72,9 @@ export const BasicBtn = ({ content, mode, post }) => {
         ...el.data(),
         id: el.id,
       }))[0];
-      setPickId(queried.id);
+      if (queried) {
+        setPickId(queried.id);
+      }
     });
   };
 
