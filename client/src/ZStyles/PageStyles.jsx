@@ -8,6 +8,16 @@ export const PageBase = styled.div`
 
 export const MainPageStyle = styled(PageBase)`
   width: 50%;
+  .img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img {
+      width: 70%;
+    }
+    margin-bottom :70px;
+  }
+
   .title--wrapper {
     display: flex;
     align-items: center;
@@ -58,8 +68,8 @@ export const LoginPageStyle = styled(PageBase)`
 export const BoardPageStyle = styled(PageBase)`
   width: 50%;
   align-items: center;
-  a{
-    color:var(--font200)
+  a {
+    color: var(--font200);
   }
   .btn--wrapper {
     display: flex;
