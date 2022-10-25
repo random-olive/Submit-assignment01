@@ -12,3 +12,7 @@
 ### 2) 직접 구현한 sticky button과 모달 window
 ### 3) react-animation-on-scroll 를 활용한 메인 페이지 애니메이션
 
+### 1) gif1
+<p align="center">
+<img src="https://user-images.githubusercontent.com/104327907/197713535-585f7210-917b-43af-8e82-10a4c01c1802.gif">
+  </p>
