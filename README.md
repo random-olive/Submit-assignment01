@@ -1,4 +1,4 @@
-# Submit-assignment01 (INTRO)
+# Submit-assignment01 (branch: INTRO)
 
 ## 1. React JS, Redux, Styled-components, Firebase 활용
 
