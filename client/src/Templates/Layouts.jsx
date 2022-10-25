@@ -16,7 +16,7 @@ export const LayoutMain = () => {
       <LayoutStyle>
         <LinkBtns
           content={
-            userState && userState.list.length === 0 ? "로그인" : "로그아웃"
+            userState!==undefined && userState.list.length === 0 ? "로그인" : "로그아웃"
           }
           // path={PATH.LOGIN}
         />

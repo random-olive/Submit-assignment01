@@ -53,7 +53,7 @@ export const IngredientBoxStyle = styled(BaseBoxStyle)`
 
 export const HotRecipesBoxStyle = styled(BaseBoxStyle)`
   padding: 20px;
-
+  
   .wrapper {
     display: flex;
     width: 70%;

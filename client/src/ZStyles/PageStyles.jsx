@@ -15,13 +15,19 @@ export const MainPageStyle = styled(PageBase)`
     img {
       width: 70%;
     }
-    margin-bottom :70px;
+    margin-bottom: 70px;
   }
 
   .title--wrapper {
     display: flex;
     align-items: center;
     justify-content: space-between;
+  }
+  .test--boxes {
+    margin-top: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 `;
 
