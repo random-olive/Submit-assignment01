@@ -19,12 +19,13 @@ export const BaseBoxStyle = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: gainsboro;
+  background-color: var(--ivory100);
   margin: 20px 0 20px 0;
 `;
 
 export const IngredientBoxStyle = styled(BaseBoxStyle)`
   margin-bottom: 80px;
+  padding: 20px;
   .wrapper {
     display: flex;
     width: 70%;
@@ -42,10 +43,17 @@ export const IngredientBoxStyle = styled(BaseBoxStyle)`
       flex-direction: column;
       margin-right: 20px;
     }
+    img:nth-child(1){
+      width: 100px;
+      height: 100px;
+      margin-bottom: 15px;
+    }
   }
 `;
 
 export const HotRecipesBoxStyle = styled(BaseBoxStyle)`
+  padding: 20px;
+
   .wrapper {
     display: flex;
     width: 70%;
@@ -53,7 +61,13 @@ export const HotRecipesBoxStyle = styled(BaseBoxStyle)`
   .recipes--wrapper {
     display: flex;
     flex-direction: column;
-    height: 150px;
+    margin-right: 20px;
+    /* height: 150px; */
+  }
+  img{
+    width: 100px;
+    height: 100px;
+    margin-bottom: 15px;
   }
 `;
 

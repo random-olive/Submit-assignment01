@@ -15,14 +15,24 @@ const IngredientsBox = () => {
         </div>
         <div className="ingredients--wrapper">
           <div>
-            <img alt="ing" />
-            <H4>재료</H4>
-            <H4>월별</H4>
+            <img
+              src={
+                "https://images.unsplash.com/photo-1554071407-1fb7259a9118?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
+              }
+              alt="img"
+            />
+            <H4>고등어</H4>
+            <H4>9월 ~ 11월</H4>
           </div>
           <div>
-            <img alt="ing" />
-            <H4>재료</H4>
-            <H4>월별</H4>
+            <img
+              src={
+                "https://images.unsplash.com/photo-1627898292764-6733087b55ac?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1180&q=80"
+              }
+              alt="img"
+            />
+            <H4>굴</H4>
+            <H4>9월 ~ 12월</H4>
           </div>
         </div>
       </IngredientBoxStyle>
