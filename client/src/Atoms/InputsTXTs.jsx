@@ -27,6 +27,9 @@ export const Input = styled(SearchInput)`
   :focus {
     border-bottom: 2px solid var(--orange300);
   }
+  @media screen and (max-width: 588px) {
+    width: 380px;
+  }
 `;
 
 export const TXT = styled.textarea`
@@ -45,5 +48,8 @@ export const TXT = styled.textarea`
   ::placeholder {
     color: var(--orange150);
     font-weight: bold;
+  }
+  @media screen and (max-width: 588px) {
+    width: 380px
   }
 `;

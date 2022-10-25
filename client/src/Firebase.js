@@ -2,7 +2,7 @@ import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 import { getAnalytics } from "firebase/analytics";
 
-import { collection, getDocs, addDoc } from "firebase/firestore";
+import { collection } from "firebase/firestore";
 
 export const firebaseConfig = {
   apiKey: process.env.REACT_APP_API_KEY,

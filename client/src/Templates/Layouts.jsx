@@ -5,7 +5,6 @@ import { LayoutStyle } from "../ZStyles/TemplateStyles";
 import LinkBtns from "../Atoms/LinkBtns";
 import { LogoO, StickyBtnO } from "../Organisms/BtnsO";
 import { QuestionIcon } from "../Constants/icons";
-import { PATH } from "../Constants/routePath";
 import { useSelector } from "react-redux";
 
 export const LayoutMain = () => {
@@ -15,9 +14,7 @@ export const LayoutMain = () => {
     <>
       <LayoutStyle>
         <LinkBtns
-          content={
-            userState!==undefined && userState.list.length === 0 ? "로그인" : "로그아웃"
-          }
+          content={userState.list.length === 0 ? "로그인" : "로그아웃"}
           // path={PATH.LOGIN}
         />
         <LogoO />

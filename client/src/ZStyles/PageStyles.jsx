@@ -29,6 +29,19 @@ export const MainPageStyle = styled(PageBase)`
     justify-content: center;
     align-items: center;
   }
+  @media screen and (max-width: 588px) {
+    width: 90%;
+
+    .test--boxes {
+      margin-top: 70px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      img {
+        width: 100%;
+      }
+    }
+  }
 `;
 
 export const LoginPageStyle = styled(PageBase)`
@@ -69,6 +82,10 @@ export const LoginPageStyle = styled(PageBase)`
       background: var(--green100);
     }
   }
+
+  @media screen and (max-width: 588px) {
+    width: 70%;
+  }
 `;
 
 export const BoardPageStyle = styled(PageBase)`
@@ -82,6 +99,9 @@ export const BoardPageStyle = styled(PageBase)`
     width: 100%;
     padding: 0 0 10px 0;
     justify-content: right;
+  }
+  @media screen and (max-width: 588px) {
+    width: 90%;
   }
 `;
 
@@ -110,6 +130,9 @@ export const PostPageStyle = styled(BoardPageStyle)`
     div:nth-child(2) {
       margin-left: 20px;
     }
+  }
+  @media screen and (max-width: 588px) {
+    width: 90%;
   }
 `;
 
@@ -148,5 +171,51 @@ export const DetailPageStyle = styled(BoardPageStyle)`
     width: 100%;
     color: var(--font100);
     margin-top: 30px;
+  }
+`;
+
+export const FeaturePageStyle = styled(PageBase)`
+  width: 50%;
+  .img--wrapper {
+    .title {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: var(--font200);
+      margin-bottom: 30px;
+    }
+  }
+  .btn--wrapper {
+    display: flex;
+    width: 100%;
+    padding: 10px;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--orange200);
+    border-radius: 10px;
+    margin-bottom: 70px;
+    button {
+      margin: 10px;
+      border-radius: 5px;
+    }
+  }
+  a {
+    color: var(--font200);
+  }
+
+  .img--wrapper {
+    margin-bottom: 70px;
+    .imgs {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+  .desc--wrapper {
+    background: var(--orange150);
+    border-radius: 10px;
+    padding: 20px;
+    margin: 5px 0 50px 0;  }
+
+  @media screen and (max-width: 588px) {
+    width: 90%;
   }
 `;

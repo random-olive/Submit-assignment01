@@ -1,10 +1,9 @@
 import { LoginPageStyle } from "../ZStyles/PageStyles";
 import { GoogleIcon, LoginIcon } from "../Constants/icons";
-import { useState, useEffect } from "react";
+import { useState} from "react";
 import LoginBox from "../Molecules/LoginBox";
 import LinkBtns from "../Atoms/LinkBtns";
 import styled from "styled-components";
-import { PATH } from "../Constants/routePath";
 import { socialLogin } from "../Organisms/FirebaseO";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
@@ -62,7 +61,10 @@ const LoginPage = ({ setIsLoggedIn, setLogout }) => {
         </div>
         {admin ? <LoginBox /> : ""}
         <div className="login">
-          {userState.list.length === 0 ? "로그인" : "로그아웃"}
+          <LinkBtns
+          margin={'3px 0 0 0 '}
+            content={userState.list.length === 0 ? "로그인" : "로그아웃"}
+          />
         </div>
       </LoginPageStyle>
       <Block>
@@ -80,4 +82,8 @@ const Block = styled.div`
   justify-content: center;
   align-items: center;
   width: 25%;
+
+  @media screen and (max-width: 588px) {
+    width: 90%;
+  }
 `;

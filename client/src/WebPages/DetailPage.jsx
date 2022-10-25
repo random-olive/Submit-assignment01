@@ -1,11 +1,11 @@
-import { doc, getDocs } from "firebase/firestore";
+import { getDocs } from "firebase/firestore";
 import { useParams, Link } from "react-router-dom";
-import { db, postsCollection } from "../Firebase";
+import {postsCollection } from "../Firebase";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { DetailPageStyle } from "../ZStyles/PageStyles";
 import { SettingIcon } from "../Constants/icons";
-import { PATH } from "../Constants/routePath";
+
 
 const DetailPage = () => {
   const { id } = useParams();

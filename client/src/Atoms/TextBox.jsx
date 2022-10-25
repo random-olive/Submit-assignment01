@@ -11,8 +11,8 @@ export const TextBox = ({ on, setOn }) => {
     { link: PATH.LOGIN, name: "로그인" },
     { link: PATH.BOARD, name: "게시판" },
     { link: PATH.CREATE, name: "글 쓰기" },
-    { link: PATH.MAIN, name: "페이지 01" },
-    { link: PATH.MAIN, name: "페이지 02" },
+    { link: PATH.FEAT, name: "페이지 01-02" },
+
   ];
 
   return (

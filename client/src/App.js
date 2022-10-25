@@ -1,6 +1,6 @@
 import "./App.css";
 import "./Constants/colors.css";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Suspense } from "react";
 import { Routes, Route } from "react-router-dom";
 import { LayoutMain, Layout, LayoutBase } from "./Templates/Layouts";
@@ -16,6 +16,7 @@ import LoginPage from "./WebPages/LoginPage";
 import BoardPage from "./WebPages/BoardPage";
 import PostPage from "./WebPages/PostPage";
 import DetailPage from "./WebPages/DetailPage";
+import FeaturePage from "./WebPages/FeaturePage";
 
 function App() {
   const [loading, setLoading] = useState(false);
@@ -44,6 +45,7 @@ function App() {
               <Route path={PATH.CREATE} element={<PostPage mode="create" />} />
               <Route path={PATH.DETAIL} element={<DetailPage />} />
               <Route path={PATH.UPDATE} element={<PostPage />} />
+              <Route path={PATH.FEAT} element={<FeaturePage />} />
             </Route>
           </Routes>
         </Suspense>

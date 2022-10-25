@@ -10,4 +10,6 @@ export const PATH = {
   CREATE: '/board/create',
   DETAIL: '/board/:id',
   UPDATE: '/board/:id/update',
+
+  FEAT : '/feat',
 };
