@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const H1 = styled.div`
   font-size: 1.7rem;
+  font-weight: ${props=>props.fontWeight};
   color: ${(props) => props.color || "var(--font200)"};
   margin: ${(props) => props.margin};
   @media screen and (max-width: 588px) {

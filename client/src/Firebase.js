@@ -1,7 +1,8 @@
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
-import { getAuth } from "firebase/auth";
 import { getAnalytics } from "firebase/analytics";
+
+import { collection } from "firebase/firestore";
 
 export const firebaseConfig = {
   apiKey: process.env.REACT_APP_API_KEY,
@@ -13,8 +14,11 @@ export const firebaseConfig = {
   measurementId: process.env.REACT_APP_MEASUREMENT_ID,
 };
 
-export const firebase = initializeApp(firebaseConfig);
-export const fireStore = getFirestore(firebase);
-export const authService = getAuth(firebase);
-export const dbService = getFirestore(firebase);
-export const analytics = getAnalytics(firebase);
+export const firebaseInstance = initializeApp(firebaseConfig);
+export const db = getFirestore(firebaseInstance);
+export const dbService = getFirestore();
+export const postsCollection = collection(db, "posts");
+
+// export const authService = getAuth(firebaseInstance);
+// export const fireStore = getFirestore(firebaseInstance);
+export const analytics = getAnalytics(firebaseInstance);

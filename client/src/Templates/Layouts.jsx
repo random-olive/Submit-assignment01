@@ -1,23 +1,49 @@
 import { Outlet } from "react-router-dom";
-import Logo from "../Atoms/Logo";
+// import Logo from "../Atoms/Logo";
 import Searchbar from "../Molecules/Searchbar";
 import { LayoutStyle } from "../ZStyles/TemplateStyles";
 import LinkBtns from "../Atoms/LinkBtns";
-import { StickyBtnO } from "../Organisms/BtnsO";
+import { LogoO, StickyBtnO } from "../Organisms/BtnsO";
 import { QuestionIcon } from "../Constants/icons";
+import { useSelector } from "react-redux";
 
+export const LayoutMain = () => {
+  const userState = useSelector((state) => state.user);
 
-export const LayoutWithSearchbar = () => {
   return (
     <>
       <LayoutStyle>
-        <LinkBtns content={"로그인 / 회원가입"}></LinkBtns>
-        <Logo />
+        <LinkBtns
+          content={userState.list.length === 0 ? "로그인" : "로그아웃"}
+          // path={PATH.LOGIN}
+        />
+        <LogoO />
         <Searchbar />
         <Outlet />
         <StickyBtnO
           content={<QuestionIcon color="var(--red100)" size="23" />}
         />
+      </LayoutStyle>
+    </>
+  );
+};
+
+export const Layout = () => {
+  return (
+    <>
+      <LayoutStyle>
+        <LogoO margin={"110px 0 0 0"} />
+        <Outlet />
+      </LayoutStyle>
+    </>
+  );
+};
+
+export const LayoutBase = () => {
+  return (
+    <>
+      <LayoutStyle>
+        <Outlet />
       </LayoutStyle>
     </>
   );

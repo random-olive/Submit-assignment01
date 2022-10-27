@@ -1,13 +1,13 @@
-[debug] [2022-10-19T01:08:50.906Z] ----------------------------------------------------------------------
-[debug] [2022-10-19T01:08:50.907Z] Command:       /Users/seowonahn/.nvm/versions/node/v16.15.0/bin/node /Users/seowonahn/.nvm/versions/node/v16.15.0/bin/firebase init
-[debug] [2022-10-19T01:08:50.907Z] CLI Version:   11.15.0
-[debug] [2022-10-19T01:08:50.907Z] Platform:      darwin
-[debug] [2022-10-19T01:08:50.908Z] Node Version:  v16.15.0
-[debug] [2022-10-19T01:08:50.908Z] Time:          Wed Oct 19 2022 10:08:50 GMT+0900 (Korean Standard Time)
-[debug] [2022-10-19T01:08:50.908Z] ----------------------------------------------------------------------
+[debug] [2022-10-23T09:29:07.008Z] ----------------------------------------------------------------------
+[debug] [2022-10-23T09:29:07.009Z] Command:       /Users/seowonahn/.nvm/versions/node/v16.15.0/bin/node /Users/seowonahn/.nvm/versions/node/v16.15.0/bin/firebase init
+[debug] [2022-10-23T09:29:07.009Z] CLI Version:   11.15.0
+[debug] [2022-10-23T09:29:07.009Z] Platform:      darwin
+[debug] [2022-10-23T09:29:07.009Z] Node Version:  v16.15.0
+[debug] [2022-10-23T09:29:07.010Z] Time:          Sun Oct 23 2022 18:29:07 GMT+0900 (Korean Standard Time)
+[debug] [2022-10-23T09:29:07.010Z] ----------------------------------------------------------------------
 [debug] 
-[debug] [2022-10-19T01:08:50.912Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
-[debug] [2022-10-19T01:08:50.912Z] > authorizing via signed-in user (ahnssy7@gmail.com)
+[debug] [2022-10-23T09:29:07.013Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-10-23T09:29:07.013Z] > authorizing via signed-in user (ahnssy7@gmail.com)
 [info] 
      ######## #### ########  ######## ########     ###     ######  ########
      ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
@@ -19,3 +19,10 @@ You're about to initialize a Firebase project in this directory:
 
   /Users/seowonahn/CodeStates/05_Side_Projects/Submit-assignment01/client
 
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
