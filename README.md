@@ -1,4 +1,4 @@
-# mini-firebase (branch: INTRO)
+# mini-firebase 
 
 ## 1. React JS, Redux, Styled-components, Firebase 활용
 
